@@ -28,12 +28,12 @@ class LiushuInputController: IMKInputController {
                 client.insertText(candidates[keyValue], replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
                 inputs = String()
                 candidatesWindow.hide()
+                return true
             }
-        } else {
-            candidatesWindow.update()
-            candidatesWindow.show()
         }
-
+        
+        candidatesWindow.update()
+        candidatesWindow.show()
     
         return true
     }
