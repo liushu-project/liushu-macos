@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8B05BFB62AF343A20002ED1A /* LiushuCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B05BFB52AF343A20002ED1A /* LiushuCore */; };
+		8B05BFB82AF3469A0002ED1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05BFB72AF3469A0002ED1A /* AppDelegate.swift */; };
+		8B05BFBA2AF346CE0002ED1A /* LiushuInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05BFB92AF346CE0002ED1A /* LiushuInputController.swift */; };
+		8BC185772AF3431D00EA648D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC185762AF3431D00EA648D /* Assets.xcassets */; };
+		8BC1857A2AF3431D00EA648D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC185792AF3431D00EA648D /* Preview Assets.xcassets */; };
+		8BC185852AF3431D00EA648D /* LiushuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC185842AF3431D00EA648D /* LiushuTests.swift */; };
+		8BC1858F2AF3431D00EA648D /* LiushuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC1858E2AF3431D00EA648D /* LiushuUITests.swift */; };
+		8BC185912AF3431D00EA648D /* LiushuUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC185902AF3431D00EA648D /* LiushuUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8BC185812AF3431D00EA648D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC185672AF3431B00EA648D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC1856E2AF3431C00EA648D;
+			remoteInfo = Liushu;
+		};
+		8BC1858B2AF3431D00EA648D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BC185672AF3431B00EA648D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BC1856E2AF3431C00EA648D;
+			remoteInfo = Liushu;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8B05BFB72AF3469A0002ED1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8B05BFB92AF346CE0002ED1A /* LiushuInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiushuInputController.swift; sourceTree = "<group>"; };
+		8B05BFBB2AF347890002ED1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8BC1856F2AF3431C00EA648D /* Liushu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liushu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC185762AF3431D00EA648D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8BC185792AF3431D00EA648D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8BC1857B2AF3431D00EA648D /* Liushu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Liushu.entitlements; sourceTree = "<group>"; };
+		8BC185802AF3431D00EA648D /* LiushuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiushuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC185842AF3431D00EA648D /* LiushuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiushuTests.swift; sourceTree = "<group>"; };
+		8BC1858A2AF3431D00EA648D /* LiushuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiushuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BC1858E2AF3431D00EA648D /* LiushuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiushuUITests.swift; sourceTree = "<group>"; };
+		8BC185902AF3431D00EA648D /* LiushuUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiushuUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BC1856C2AF3431C00EA648D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B05BFB62AF343A20002ED1A /* LiushuCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC1857D2AF3431D00EA648D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC185872AF3431D00EA648D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BC185662AF3431B00EA648D = {
+			isa = PBXGroup;
+			children = (
+				8BC185712AF3431C00EA648D /* Liushu */,
+				8BC185832AF3431D00EA648D /* LiushuTests */,
+				8BC1858D2AF3431D00EA648D /* LiushuUITests */,
+				8BC185702AF3431C00EA648D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BC185702AF3431C00EA648D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BC1856F2AF3431C00EA648D /* Liushu.app */,
+				8BC185802AF3431D00EA648D /* LiushuTests.xctest */,
+				8BC1858A2AF3431D00EA648D /* LiushuUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BC185712AF3431C00EA648D /* Liushu */ = {
+			isa = PBXGroup;
+			children = (
+				8B05BFBB2AF347890002ED1A /* Info.plist */,
+				8BC185762AF3431D00EA648D /* Assets.xcassets */,
+				8BC1857B2AF3431D00EA648D /* Liushu.entitlements */,
+				8BC185782AF3431D00EA648D /* Preview Content */,
+				8B05BFB72AF3469A0002ED1A /* AppDelegate.swift */,
+				8B05BFB92AF346CE0002ED1A /* LiushuInputController.swift */,
+			);
+			path = Liushu;
+			sourceTree = "<group>";
+		};
+		8BC185782AF3431D00EA648D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8BC185792AF3431D00EA648D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8BC185832AF3431D00EA648D /* LiushuTests */ = {
+			isa = PBXGroup;
+			children = (
+				8BC185842AF3431D00EA648D /* LiushuTests.swift */,
+			);
+			path = LiushuTests;
+			sourceTree = "<group>";
+		};
+		8BC1858D2AF3431D00EA648D /* LiushuUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8BC1858E2AF3431D00EA648D /* LiushuUITests.swift */,
+				8BC185902AF3431D00EA648D /* LiushuUITestsLaunchTests.swift */,
+			);
+			path = LiushuUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BC1856E2AF3431C00EA648D /* Liushu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC185942AF3431D00EA648D /* Build configuration list for PBXNativeTarget "Liushu" */;
+			buildPhases = (
+				8BC1856B2AF3431C00EA648D /* Sources */,
+				8BC1856C2AF3431C00EA648D /* Frameworks */,
+				8BC1856D2AF3431C00EA648D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Liushu;
+			packageProductDependencies = (
+				8B05BFB52AF343A20002ED1A /* LiushuCore */,
+			);
+			productName = Liushu;
+			productReference = 8BC1856F2AF3431C00EA648D /* Liushu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8BC1857F2AF3431D00EA648D /* LiushuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC185972AF3431D00EA648D /* Build configuration list for PBXNativeTarget "LiushuTests" */;
+			buildPhases = (
+				8BC1857C2AF3431D00EA648D /* Sources */,
+				8BC1857D2AF3431D00EA648D /* Frameworks */,
+				8BC1857E2AF3431D00EA648D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BC185822AF3431D00EA648D /* PBXTargetDependency */,
+			);
+			name = LiushuTests;
+			productName = LiushuTests;
+			productReference = 8BC185802AF3431D00EA648D /* LiushuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8BC185892AF3431D00EA648D /* LiushuUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BC1859A2AF3431D00EA648D /* Build configuration list for PBXNativeTarget "LiushuUITests" */;
+			buildPhases = (
+				8BC185862AF3431D00EA648D /* Sources */,
+				8BC185872AF3431D00EA648D /* Frameworks */,
+				8BC185882AF3431D00EA648D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8BC1858C2AF3431D00EA648D /* PBXTargetDependency */,
+			);
+			name = LiushuUITests;
+			productName = LiushuUITests;
+			productReference = 8BC1858A2AF3431D00EA648D /* LiushuUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BC185672AF3431B00EA648D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					8BC1856E2AF3431C00EA648D = {
+						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
+					};
+					8BC1857F2AF3431D00EA648D = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 8BC1856E2AF3431C00EA648D;
+					};
+					8BC185892AF3431D00EA648D = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 8BC1856E2AF3431C00EA648D;
+					};
+				};
+			};
+			buildConfigurationList = 8BC1856A2AF3431B00EA648D /* Build configuration list for PBXProject "Liushu" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8BC185662AF3431B00EA648D;
+			packageReferences = (
+				8B05BFB42AF343A20002ED1A /* XCLocalSwiftPackageReference "Packages/LiushuCore" */,
+			);
+			productRefGroup = 8BC185702AF3431C00EA648D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BC1856E2AF3431C00EA648D /* Liushu */,
+				8BC1857F2AF3431D00EA648D /* LiushuTests */,
+				8BC185892AF3431D00EA648D /* LiushuUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BC1856D2AF3431C00EA648D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC1857A2AF3431D00EA648D /* Preview Assets.xcassets in Resources */,
+				8BC185772AF3431D00EA648D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC1857E2AF3431D00EA648D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC185882AF3431D00EA648D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BC1856B2AF3431C00EA648D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B05BFBA2AF346CE0002ED1A /* LiushuInputController.swift in Sources */,
+				8B05BFB82AF3469A0002ED1A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC1857C2AF3431D00EA648D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC185852AF3431D00EA648D /* LiushuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8BC185862AF3431D00EA648D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC185912AF3431D00EA648D /* LiushuUITestsLaunchTests.swift in Sources */,
+				8BC1858F2AF3431D00EA648D /* LiushuUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8BC185822AF3431D00EA648D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC1856E2AF3431C00EA648D /* Liushu */;
+			targetProxy = 8BC185812AF3431D00EA648D /* PBXContainerItemProxy */;
+		};
+		8BC1858C2AF3431D00EA648D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BC1856E2AF3431C00EA648D /* Liushu */;
+			targetProxy = 8BC1858B2AF3431D00EA648D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8BC185922AF3431D00EA648D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8BC185932AF3431D00EA648D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		8BC185952AF3431D00EA648D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Liushu/Liushu.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Liushu/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Liushu/Info.plist;
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "$(PRODUCT_MODULE_NAME).NSManualApplication";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot00.inputmethod.Liushu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = build;
+			};
+			name = Debug;
+		};
+		8BC185962AF3431D00EA648D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Liushu/Liushu.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Liushu/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Liushu/Info.plist;
+				INFOPLIST_KEY_LSBackgroundOnly = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSPrincipalClass = "$(PRODUCT_MODULE_NAME).NSManualApplication";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot00.inputmethod.Liushu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8BC185982AF3431D00EA648D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot00.inputmethod.LiushuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Liushu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Liushu";
+			};
+			name = Debug;
+		};
+		8BC185992AF3431D00EA648D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot00.inputmethod.LiushuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Liushu.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Liushu";
+			};
+			name = Release;
+		};
+		8BC1859B2AF3431D00EA648D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot00.inputmethod.LiushuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Liushu;
+			};
+			name = Debug;
+		};
+		8BC1859C2AF3431D00EA648D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot00.inputmethod.LiushuUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Liushu;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BC1856A2AF3431B00EA648D /* Build configuration list for PBXProject "Liushu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC185922AF3431D00EA648D /* Debug */,
+				8BC185932AF3431D00EA648D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC185942AF3431D00EA648D /* Build configuration list for PBXNativeTarget "Liushu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC185952AF3431D00EA648D /* Debug */,
+				8BC185962AF3431D00EA648D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC185972AF3431D00EA648D /* Build configuration list for PBXNativeTarget "LiushuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC185982AF3431D00EA648D /* Debug */,
+				8BC185992AF3431D00EA648D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BC1859A2AF3431D00EA648D /* Build configuration list for PBXNativeTarget "LiushuUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BC1859B2AF3431D00EA648D /* Debug */,
+				8BC1859C2AF3431D00EA648D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		8B05BFB42AF343A20002ED1A /* XCLocalSwiftPackageReference "Packages/LiushuCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/LiushuCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B05BFB52AF343A20002ED1A /* LiushuCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LiushuCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8BC185672AF3431B00EA648D /* Project object */;
+}
