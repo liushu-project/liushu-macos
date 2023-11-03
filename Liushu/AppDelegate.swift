@@ -33,11 +33,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
         server = IMKServer(name: Bundle.main.infoDictionary?["InputMethodConnectionName"] as? String, bundleIdentifier: Bundle.main.bundleIdentifier)
         candidatesWindow = IMKCandidates(server: server, panelType: kIMKSingleRowSteppingCandidatePanel, styleType: kIMKMain)
-        let appSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let configDirURL = appSupportURL.appendingPathComponent(Bundle.main.bundleIdentifier ?? "com.elliot00.inputmethod.Liushu")
-        try? FileManager.default.createDirectory(at: configDirURL, withIntermediateDirectories: true)
-        let dictFileUrl = configDirURL.appendingPathComponent("sunman.trie")
-        let dictPath = dictFileUrl.path(percentEncoded: false)
+
+        let dictPath = ConfigManager.shared.getDictPath()
 
         do {
             engine = try Engine(dictPath: dictPath)
