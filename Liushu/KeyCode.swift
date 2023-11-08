@@ -1,3 +1,4 @@
+// swift-format-ignore-file
 //
 // Liushu is a safe and extensible Input Method Engine for macOS.
 //
