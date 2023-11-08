@@ -27,7 +27,7 @@ class NSManualApplication: NSApplication {
 class AppDelegate: NSObject, NSApplicationDelegate {
     var server = IMKServer()
     var candidatesWindow = IMKCandidates()
-    var engine: Engine?
+    var engineAgent: InputMethodEngineAgent?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         // Insert code here to initialize your application
@@ -37,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let dictPath = ConfigManager.shared.getDictPath()
 
         do {
-            engine = try Engine(dictPath: dictPath)
+            engineAgent = try InputMethodEngineAgent(dictPath: dictPath)
         } catch {
             fatalError("could not init engine")
         }

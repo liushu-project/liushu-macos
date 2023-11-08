@@ -11,45 +11,115 @@ import LiushuCore
 
 @objc(LiushuInputController)
 class LiushuInputController: IMKInputController {
-    private var candidatesWindow: IMKCandidates { return (NSApp.delegate as! AppDelegate).candidatesWindow }
-    private var engine: Engine? { return (NSApp.delegate as! AppDelegate).engine }
-    private var inputs = String()
-    private (set) var candidates = autoreleasepool { return [String]() }
-    
-    override func inputText(_ string: String!, client sender: Any!) -> Bool {
-        NSLog(string)
-        inputs.append(string)
-        
-        if candidatesWindow.isVisible() {
-            if let keyValue = Int(string) {
-                guard let client = sender as? IMKTextInput else {
-                    return false
-                }
-                client.insertText(candidates[keyValue], replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
-                inputs = String()
-                candidatesWindow.hide()
-                return true
-            }
-        }
-        
-        candidatesWindow.update()
-        candidatesWindow.show()
-    
-        return true
+  private var candidatesWindow: IMKCandidates {
+    return (NSApp.delegate as! AppDelegate).candidatesWindow
+  }
+  private var engineAgent: InputMethodEngineAgent? {
+    return (NSApp.delegate as! AppDelegate).engineAgent
+  }
+  private var inputs = String()
+  private(set) var candidates = autoreleasepool { return [String]() }
+  private(set) var candidateSelection = autoreleasepool { return NSAttributedString() }
+
+  override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
+    NSLog("\(String(describing: event))")
+
+    guard let client = sender as? IMKTextInput else {
+      return false
     }
-    
-    override func candidates(_ sender: Any!) -> [Any]! {
-        if (inputs.isEmpty) {
-            return []
-        }
-        let result: [String]?
-        do {
-            let items = try engine?.search(code: inputs)
-            result = items?.map({ $0.text })
-            candidates = result ?? []
-        } catch {
-            result = []
-        }
-        return result
+
+    if event.type != .keyDown {
+      return false
     }
+
+    switch event.keyCode {
+    case KeyCode.a, KeyCode.b, KeyCode.c, KeyCode.d, KeyCode.e, KeyCode.f, KeyCode.g, KeyCode.h,
+      KeyCode.i, KeyCode.j, KeyCode.k, KeyCode.l, KeyCode.m, KeyCode.n, KeyCode.o, KeyCode.p,
+      KeyCode.q, KeyCode.r, KeyCode.s, KeyCode.t, KeyCode.u, KeyCode.v, KeyCode.w, KeyCode.x,
+      KeyCode.y, KeyCode.z:
+
+      if let char = event.characters {
+        NSLog("char is \(char)")
+        return handleAnsiKey(char, client)
+      }
+    case KeyCode.delete:
+      return handleDelete()
+    case KeyCode.one:
+      return handleNumberKey(index: 0, client)
+    case KeyCode.two:
+      return handleNumberKey(index: 1, client)
+    case KeyCode.three:
+      return handleNumberKey(index: 2, client)
+    case KeyCode.four:
+      return handleNumberKey(index: 3, client)
+    case KeyCode.five:
+      return handleNumberKey(index: 4, client)
+    case KeyCode.six:
+      return handleNumberKey(index: 5, client)
+    case KeyCode.seven:
+      return handleNumberKey(index: 6, client)
+    case KeyCode.eight:
+      return handleNumberKey(index: 7, client)
+    case KeyCode.nine:
+      return handleNumberKey(index: 8, client)
+    case KeyCode.space:
+      return handleSpaceKey(client)
+    default:
+      NSLog("unhandled")
+    }
+
+    return false
+  }
+
+  func handleAnsiKey(_ char: String, _ client: IMKTextInput) -> Bool {
+    inputs.append(char)
+    candidates = engineAgent?.translate(code: inputs).map({ $0.text }) ?? []
+    candidatesWindow.update()
+    candidatesWindow.show()
+    return true
+  }
+
+  func handleDelete() -> Bool {
+    if inputs.isEmpty {
+      return false
+    }
+    inputs.removeLast()
+    candidates = engineAgent?.translate(code: inputs).map({ $0.text }) ?? []
+    candidatesWindow.update()
+    candidatesWindow.show()
+    return true
+  }
+
+  func handleNumberKey(index num: Int, _ client: IMKTextInput) -> Bool {
+    if num > candidates.count - 1 {
+      return false
+    }
+    commit(candidates[num], client)
+    return true
+  }
+
+  func handleSpaceKey(_ client: IMKTextInput) -> Bool {
+    let selectedString = candidateSelection.string
+    if !selectedString.isEmpty {
+      commit(selectedString, client)
+      return true
+    }
+    return false
+  }
+
+  override func candidates(_ sender: Any!) -> [Any]! {
+    return self.candidates
+  }
+
+  override func candidateSelectionChanged(_ candidateString: NSAttributedString!) {
+    NSLog("current selection changed \(String(describing: candidateString))")
+    candidateSelection = candidateString
+  }
+
+  private func commit(_ string: Any!, _ client: IMKTextInput) {
+    client.insertText(string, replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
+    inputs = ""
+    candidates = []
+    candidatesWindow.hide()
+  }
 }

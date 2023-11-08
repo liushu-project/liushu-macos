@@ -10,6 +10,7 @@
 		8B05BFB62AF343A20002ED1A /* LiushuCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8B05BFB52AF343A20002ED1A /* LiushuCore */; };
 		8B05BFB82AF3469A0002ED1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05BFB72AF3469A0002ED1A /* AppDelegate.swift */; };
 		8B05BFBA2AF346CE0002ED1A /* LiushuInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B05BFB92AF346CE0002ED1A /* LiushuInputController.swift */; };
+		8B63D0272AFA1D57007290B8 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63D0262AFA1D57007290B8 /* KeyCode.swift */; };
 		8B9F0D162AF491E50062BEF9 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F0D152AF491E50062BEF9 /* ConfigManager.swift */; };
 		8BC185772AF3431D00EA648D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC185762AF3431D00EA648D /* Assets.xcassets */; };
 		8BC1857A2AF3431D00EA648D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BC185792AF3431D00EA648D /* Preview Assets.xcassets */; };
@@ -39,6 +40,7 @@
 		8B05BFB72AF3469A0002ED1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B05BFB92AF346CE0002ED1A /* LiushuInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiushuInputController.swift; sourceTree = "<group>"; };
 		8B05BFBB2AF347890002ED1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8B63D0262AFA1D57007290B8 /* KeyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCode.swift; sourceTree = "<group>"; };
 		8B9F0D152AF491E50062BEF9 /* ConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigManager.swift; sourceTree = "<group>"; };
 		8BC1856F2AF3431C00EA648D /* Liushu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liushu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC185762AF3431D00EA648D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				8B05BFB72AF3469A0002ED1A /* AppDelegate.swift */,
 				8B9F0D152AF491E50062BEF9 /* ConfigManager.swift */,
 				8B05BFB92AF346CE0002ED1A /* LiushuInputController.swift */,
+				8B63D0262AFA1D57007290B8 /* KeyCode.swift */,
 			);
 			path = Liushu;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B63D0272AFA1D57007290B8 /* KeyCode.swift in Sources */,
 				8B05BFBA2AF346CE0002ED1A /* LiushuInputController.swift in Sources */,
 				8B05BFB82AF3469A0002ED1A /* AppDelegate.swift in Sources */,
 				8B9F0D162AF491E50062BEF9 /* ConfigManager.swift in Sources */,
