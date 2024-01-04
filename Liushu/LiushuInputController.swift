@@ -80,6 +80,9 @@ class LiushuInputController: IMKInputController {
 
   func handleAnsiKey(_ char: String, _ client: IMKTextInput) -> Bool {
     inputs.append(char)
+    client.setMarkedText(
+      inputs, selectionRange: NSMakeRange(inputs.count, 0),
+      replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
     candidates = engineAgent?.translate(code: inputs).map({ $0.text }) ?? []
     candidatesWindow.update()
     candidatesWindow.show()
