@@ -11,6 +11,7 @@ import LiushuCore
 
 @objc(LiushuInputController)
 class LiushuInputController: IMKInputController {
+  private var isActived = true
   private var candidatesWindow: IMKCandidates {
     return (NSApp.delegate as! AppDelegate).candidatesWindow
   }
@@ -23,6 +24,10 @@ class LiushuInputController: IMKInputController {
 
   override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
     NSLog("\(String(describing: event))")
+
+    if !isActived {
+      return false
+    }
 
     guard let client = sender as? IMKTextInput else {
       return false
@@ -64,6 +69,8 @@ class LiushuInputController: IMKInputController {
       return handleNumberKey(index: 8, client)
     case KeyCode.space:
       return handleSpaceKey(client)
+    case KeyCode.escape:
+      return handleEscape(client)
     default:
       NSLog("unhandled")
     }
@@ -73,6 +80,9 @@ class LiushuInputController: IMKInputController {
 
   func handleAnsiKey(_ char: String, _ client: IMKTextInput) -> Bool {
     inputs.append(char)
+    client.setMarkedText(
+      inputs, selectionRange: NSMakeRange(inputs.count, 0),
+      replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
     candidates = engineAgent?.translate(code: inputs).map({ $0.text }) ?? []
     candidatesWindow.update()
     candidatesWindow.show()
@@ -105,6 +115,14 @@ class LiushuInputController: IMKInputController {
       return true
     }
     return false
+  }
+
+  func handleEscape(_ client: IMKTextInput) -> Bool {
+    inputs = ""
+    candidates = []
+    candidatesWindow.hide()
+    isActived = false
+    return true
   }
 
   override func candidates(_ sender: Any!) -> [Any]! {
