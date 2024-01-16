@@ -12,6 +12,7 @@ import LiushuCore
 @objc(LiushuInputController)
 class LiushuInputController: IMKInputController {
   private var isActived = true
+  private var prevKeyIsShift = false
   private var candidatesWindow: IMKCandidates {
     return (NSApp.delegate as! AppDelegate).candidatesWindow
   }
@@ -25,15 +26,27 @@ class LiushuInputController: IMKInputController {
   override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
     NSLog("\(String(describing: event))")
 
+    if event.type == .flagsChanged && event.keyCode == KeyCode.shift {
+      if prevKeyIsShift {
+        prevKeyIsShift = false
+        toggleInputMethod()
+      } else {
+        prevKeyIsShift = true
+      }
+      return true
+    } else {
+      prevKeyIsShift = false
+    }
+
     if !isActived {
       return false
     }
 
-    guard let client = sender as? IMKTextInput else {
+    if event.type != .keyDown {
       return false
     }
 
-    if event.type != .keyDown {
+    guard let client = sender as? IMKTextInput else {
       return false
     }
 
@@ -134,10 +147,26 @@ class LiushuInputController: IMKInputController {
     candidateSelection = candidateString
   }
 
+  override func recognizedEvents(_ sender: Any!) -> Int {
+    let events: NSEvent.EventTypeMask = [.keyDown, .flagsChanged, .keyUp]
+    return Int(events.rawValue)
+  }
+
   private func commit(_ string: Any!, _ client: IMKTextInput) {
     client.insertText(string, replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
     inputs = ""
     candidates = []
     candidatesWindow.hide()
+  }
+
+  private func toggleInputMethod() {
+    if isActived {
+      isActived = false
+      inputs = ""
+      candidates = []
+      candidatesWindow.hide()
+    } else {
+      isActived = true
+    }
   }
 }
