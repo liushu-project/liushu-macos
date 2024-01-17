@@ -23,6 +23,15 @@ class LiushuInputController: IMKInputController {
   private(set) var candidates = autoreleasepool { return [String]() }
   private(set) var candidateSelection = autoreleasepool { return NSAttributedString() }
 
+  // TODO: extract to engine
+  private let fullShapePunctuationMap: [UInt16: String] = [
+    KeyCode.period: "。",
+    KeyCode.comma: "，",
+    KeyCode.semicolon: "；",
+    KeyCode.leftBracket: "（",
+    KeyCode.rightBracket: "）",
+  ]
+
   override func handle(_ event: NSEvent!, client sender: Any!) -> Bool {
     NSLog("\(String(describing: event))")
 
@@ -85,6 +94,10 @@ class LiushuInputController: IMKInputController {
     case KeyCode.escape:
       return handleEscape(client)
     default:
+      if let punctuation = fullShapePunctuationMap[event.keyCode] {
+        commit(punctuation, client)
+        return true
+      }
       NSLog("unhandled")
     }
 
