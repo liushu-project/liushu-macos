@@ -21,7 +21,9 @@ class LiushuInputController: IMKInputController {
   }
   private var inputs = String()
   private(set) var candidates = autoreleasepool { return [String]() }
-  private(set) var candidateSelection = autoreleasepool { return NSAttributedString() }
+  private(set) var candidateSelection: NSAttributedString? = autoreleasepool {
+    return NSAttributedString()
+  }
 
   // TODO: extract to engine
   private let fullShapePunctuationMap: [UInt16: String] = [
@@ -106,9 +108,7 @@ class LiushuInputController: IMKInputController {
 
   func handleAnsiKey(_ char: String, _ client: IMKTextInput) -> Bool {
     inputs.append(char)
-    client.setMarkedText(
-      inputs, selectionRange: NSMakeRange(inputs.count, 0),
-      replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
+    updateComposition()
     candidates = engineAgent?.translate(code: inputs).map({ $0.text }) ?? []
     candidatesWindow.update()
     candidatesWindow.show()
@@ -120,6 +120,7 @@ class LiushuInputController: IMKInputController {
       return false
     }
     inputs.removeLast()
+    updateComposition()
     candidates = engineAgent?.translate(code: inputs).map({ $0.text }) ?? []
     candidatesWindow.update()
     candidatesWindow.show()
@@ -135,18 +136,17 @@ class LiushuInputController: IMKInputController {
   }
 
   func handleSpaceKey(_ client: IMKTextInput) -> Bool {
-    let selectedString = candidateSelection.string
-    if !selectedString.isEmpty {
+    if let selectedString = candidateSelection?.string {
       commit(selectedString, client)
       return true
     }
+
     return false
   }
 
   func handleEscape(_ client: IMKTextInput) -> Bool {
-    inputs = ""
-    candidates = []
-    candidatesWindow.hide()
+    clearInputState()
+    updateComposition()
     isActived = false
     return true
   }
@@ -161,25 +161,60 @@ class LiushuInputController: IMKInputController {
   }
 
   override func recognizedEvents(_ sender: Any!) -> Int {
-    let events: NSEvent.EventTypeMask = [.keyDown, .flagsChanged, .keyUp]
+    let events: NSEvent.EventTypeMask = [.keyDown, .flagsChanged]
     return Int(events.rawValue)
+  }
+
+  override func composedString(_ sender: Any!) -> Any! {
+    autoreleasepool {
+      NSLog("composed string called")
+      let attributes: [NSAttributedString.Key: Any] = [
+        .underlineStyle: NSUnderlineStyle.single.rawValue
+      ]
+      return NSAttributedString(string: self.inputs, attributes: attributes)
+    }
+  }
+
+  override func originalString(_ sender: Any!) -> NSAttributedString! {
+    autoreleasepool {
+      NSLog("original string called")
+      return NSAttributedString(string: self.inputs)
+    }
+  }
+
+  override func updateComposition() {
+    let client = self.client()
+    client?.setMarkedText(
+      self.composedString(client), selectionRange: NSMakeRange(0, self.inputs.count),
+      replacementRange: NSMakeRange(NSNotFound, NSNotFound))
+  }
+
+  override func cancelComposition() {
+    clearInputState()
+  }
+
+  override func deactivateServer(_ sender: Any!) {
+    NSLog("server deactive")
   }
 
   private func commit(_ string: Any!, _ client: IMKTextInput) {
     client.insertText(string, replacementRange: NSRange(location: NSNotFound, length: NSNotFound))
-    inputs = ""
-    candidates = []
-    candidatesWindow.hide()
+    clearInputState()
   }
 
   private func toggleInputMethod() {
     if isActived {
       isActived = false
-      inputs = ""
-      candidates = []
-      candidatesWindow.hide()
+      clearInputState()
     } else {
       isActived = true
     }
+  }
+
+  private func clearInputState() {
+    self.inputs = ""
+    self.candidates.removeAll()
+    self.candidatesWindow.hide()
+    self.candidateSelection = nil
   }
 }
